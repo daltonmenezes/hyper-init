@@ -12,6 +12,15 @@
 
 <h2 align="center">{ Work in progress }</h2>
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Options](#options)
+  - [Rules](#rules)
+  - [Commands](#commands)
+
+
 ## Installation
 ```
 Soon...
