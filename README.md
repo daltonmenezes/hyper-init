@@ -26,6 +26,8 @@
 ## Installation
 :warning: If you already have Hyper, disable any Hyper startup commands extension to avoid conflicts.
 
+If you don't have Hyper, install it from [here](https://hyper.is/#installation).
+
 ```
 Soon...
 ```
