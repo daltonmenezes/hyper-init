@@ -29,9 +29,20 @@ Soon...
 ```
 
 ## Configuration
-```hyper-init``` can be configured in ```~/.hyper.js``` configuration file within the config object.
+```hyper-init``` can be configured in ```~/.hyper.js``` configuration file within the ```config``` object.
 
-Example:
+All you have to do to get started is to create an array of objects called ```init```.
+
+```js
+init: [
+  {
+    rule: 'once',
+    commands: ['cd ~/Desktop', 'ls']
+  }
+]
+```
+
+Your ```~/.hyper.js``` configuration file should look like this:
 ```js
 module.exports = {
   config: {
