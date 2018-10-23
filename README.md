@@ -24,6 +24,8 @@
 
 
 ## Installation
+:warning: If you already have Hyper, disable any Hyper startup commands extension to avoid conflicts.
+
 ```
 Soon...
 ```
