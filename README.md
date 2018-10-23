@@ -67,5 +67,10 @@ A string that defines when you want your commands to run.
 An array with your shell commands to run.<br/>
 You can perform as many commands as you would like to do.
 
+Example:
+```js
+commands: ['cd ~/Desktop', 'ls']
+```
+
 ## License
 [MIT License](https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE)
