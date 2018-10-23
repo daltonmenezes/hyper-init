@@ -1,13 +1,19 @@
 <p align="center"><img src="https://i.imgur.com/putnspY.png" alt="logo"/></p>
 
 <h1 align="center">hyper-init</h1>
-<p align="center">The ultimate extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
-<br/><br/>
-<a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/Donate-green.svg" alt="Donate" /></a>
-<a href="https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
-</a>
 
+<p align="center">The ultimate extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
+
+<br/>
+
+> With **hyper-init** you can perform as many commands as you would like to do using rules that defines when your commands should run.
+
+  <p align="center">  
+    <a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/Donate-green.svg" alt="Donate" /></a>
+    <a href="https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
+    </a>
+  </p>
 </p>
 
 <h2 align="center">{ Work in progress }</h2>
@@ -67,7 +73,3 @@ You can perform as many commands as you would like to do.
 
 ## License
 [MIT License](https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE)
-
-
-
-
