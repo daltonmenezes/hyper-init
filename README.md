@@ -35,6 +35,8 @@ Example:
 ```js
 module.exports = {
   config: {
+  
+    // add hyper-init configuration like this:
     init: [
       {
         rule: 'once',
@@ -46,7 +48,9 @@ module.exports = {
       }
     ]    
   },
+
   plugins: ['hyper-init']
+
 }
 ```
 
