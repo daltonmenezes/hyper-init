@@ -10,8 +10,6 @@
 </a>
 </p>
 
-<h2 align="center">{ Work in progress }</h2>
-
 > With **hyper-init** you can perform as many commands as you would like to do, before and after Hyper terminal starts, using rules that defines when your commands should run.
 
 ## Table of Contents
@@ -28,8 +26,10 @@
 
 If you don't have Hyper, install it from [here](https://hyper.is/#installation).
 
+So, type the following on Hyper:
+
 ```
-Soon...
+hyper i hyper-init
 ```
 
 ## Configuration
