@@ -2,7 +2,7 @@
 
 <h1 align="center">hyper-init</h1>
 
-<p align="center">The ultimate extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
+<p align="center">The ultimate and most complete extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
 <br/><br/>
 <a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/Donate-green.svg" alt="Donate" /></a>
 <a href="https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE">
