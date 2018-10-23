@@ -1,0 +1,38 @@
+{
+  "name": "hyper-init",
+  "version": "1.0.0",
+  "description": "The ultimate and most complete extension to initialize commands before and after Hyper terminal starts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daltonmenezes/hyper-init.git"
+  },
+  "keywords": [
+    "hyper",
+    "hyper.app",
+    "hyperterm",
+    "hyper-plugin",
+    "hyperterm-plugin",
+    "hyper-extension",
+    "plugin",
+    "extension",
+    "run",
+    "startup",
+    "init",
+    "initialization",
+    "initializer",
+    "launcher",
+    "terminal",
+    "command",
+    "start"
+  ],
+  "author": "Dalton Menezes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daltonmenezes/hyper-init/issues"
+  },
+  "homepage": "https://github.com/daltonmenezes/hyper-init#readme"
+}
