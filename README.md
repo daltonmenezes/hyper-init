@@ -55,13 +55,13 @@ module.exports = {
 ### Rules
 A string that defines when you want your commands to run.
 
-| Rule | Description |
-| --- | --- |
-| `once` | executes your commands only at Hyper starts |
-| `windows` | executes your commands only at new windows |
-| `tabs` | executes your commands only at new tabs |
-| `splitted` | executes your commands only at splitted windows |
-| `all` | executes your commands with all described states previously |
+ Rule | Description 
+ --- | --- 
+ `once` | executes your commands only at Hyper starts
+ `windows` | executes your commands only at new windows
+ `tabs` | executes your commands only at new tabs
+ `splitted` | executes your commands only at splitted windows
+ `all` | executes your commands with all described states previously
 
 ### Commands
 An array with your shell commands to run.<br/>
