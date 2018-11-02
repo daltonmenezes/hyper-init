@@ -29,7 +29,7 @@ exports.middleware = store => next => action => {
 }
 
 exports.onWindow = app =>
-	app.rpc.on('execute commands', ({ uid, terminal }) => {
+	app.rpc.on('hyper-init execute commands', ({ uid, terminal }) => {
 		clearBuffer({ app, uid }, clearCommand)
 		Object.keys(init).map(key => {
 			let cmd = joinCommands(init[key].commands)
@@ -40,6 +40,6 @@ exports.onWindow = app =>
 exports.onRendererWindow = app =>
 	waitFor(app, 'rpc', rpc =>
 		rpc.on('session add', ({ uid }) =>
-			rpc.emit('execute commands', { uid, terminal })
+			rpc.emit('hyper-init execute commands', { uid, terminal })
 		)
 	)
