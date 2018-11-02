@@ -2,6 +2,7 @@
 
 const { rulesHandler } = require('./src/rules/rules-handler')
 const { clearBuffer } = require('./src/clear-buffer')
+const { joinCommands } = require('./src/join-commands')
 const waitFor = require('./src/wait-for')
 
 const init = {}
@@ -30,10 +31,10 @@ exports.middleware = store => next => action => {
 exports.onWindow = app =>
 	app.rpc.on('execute commands', ({ uid, terminal }) => {
 		clearBuffer({ app, uid }, clearCommand)
-		Object.keys(init).map(key => 
-			init[key].commands.map(cmd => 
-				rulesHandler({ init, key, cmd, app, uid, terminal }))
-		)
+		Object.keys(init).map(key => {
+			let cmd = joinCommands(init[key].commands)
+			rulesHandler({ init, key, cmd, app, uid, terminal })
+		})
 	})
 
 exports.onRendererWindow = app =>

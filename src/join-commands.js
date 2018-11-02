@@ -1,0 +1,1 @@
+exports.joinCommands = commands => commands.join(' && ')
