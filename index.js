@@ -1,7 +1,7 @@
 'use strict';
 
 const { rulesHandler } = require('./src/rules/rules-handler')
-const { clearBuffer } = require('./src/clearBuffer')
+const { clearBuffer } = require('./src/clear-buffer')
 const waitFor = require('./src/wait-for')
 
 const init = {}
