@@ -7,6 +7,7 @@
 <a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/Donate-green.svg" alt="Donate" /></a>
     <a href="https://www.npmjs.com/package/hyper-init"><img src="https://img.shields.io/npm/v/hyper-init.svg" alt="npm version"/></a>
     <img src="https://img.shields.io/npm/dm/hyper-init.svg?label=Downloads" alt="downloads" />
+    <a href="https://github.com/bnb/awesome-hyper"><img src="https://camo.githubusercontent.com/63134cb1c7ec0b86c8d97bc42877a271cf7307fa/68747470733a2f2f6473632e636c6f75642f73696e647265736f726875732f6d656e74696f6e65642d62616467652e737667" alt="mentioned in awesome list"/></a>
 <a href="https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
 </a>
