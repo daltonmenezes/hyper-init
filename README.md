@@ -17,7 +17,9 @@
 
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Options](#options)
+  - [init](#init)
+  - [clearCommand](#clearcommand)
+- [init Options](#init-options)
   - [Rules](#rules)
   - [Commands](#commands)
 
@@ -34,6 +36,9 @@ hyper i hyper-init
 ```
 
 ## Configuration
+
+## init
+
 ```hyper-init``` can be configured in ```~/.hyper.js``` configuration file within the ```config``` object.
 
 All you have to do to get started is to create an array of objects called ```init```.
@@ -70,7 +75,19 @@ module.exports = {
 }
 ```
 
-## Options
+## clearCommand
+
+Also `hyper-init` clears the terminal buffer using `printf "\\033[H"` as the default value, but you can set it manually adding the `clearCommand: ''` property within the `config` object. For example:
+
+```js
+module.exports = {
+  config: {
+    clearCommand: 'reset'
+  }
+}
+```
+
+## init: Options
 
 ### Rules
 A string that defines when you want your commands to run.
