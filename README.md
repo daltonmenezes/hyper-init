@@ -15,7 +15,7 @@
 
 > With **hyper-init** you can perform as many commands as you would like to do, before and after Hyper terminal starts, using rules that defines when your commands should run.
 
-<p align="center"><img src="https://media.giphy.com/media/2wSCpZrfWNpz7gNtD2/giphy.gif" alt="hyper-init gif"/></p>
+<p align="center"><img src="https://github.com/daltonmenezes/hyper-init/blob/master/img/hyper-init.gif?raw=true" alt="hyper-init gif"/></p>
 
 ## Table of Contents
 
