@@ -4,6 +4,7 @@
 
 <p align="center">The ultimate and most complete extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
 <br/><br/>
+<a href="https://www.patreon.com/daltonmenezes"><img src="https://img.shields.io/badge/become%20a-patron%20or%20sponsor-orange.svg" alt="become a patron or sponsor" /></a>  
 <a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/Donate-green.svg" alt="Donate" /></a>
     <a href="https://www.npmjs.com/package/hyper-init"><img src="https://img.shields.io/npm/v/hyper-init.svg" alt="npm version"/></a>
     <img src="https://img.shields.io/npm/dm/hyper-init.svg?label=Downloads" alt="downloads" />
