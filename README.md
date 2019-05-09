@@ -28,6 +28,7 @@
     - [Commands](#commands)
   - [clearCommand](#clearcommand)
   - [commandSeparator](#commandseparator)
+- [Contributing](#contributing)
 - [License](#license)
 
 
@@ -104,13 +105,16 @@ commands: ['cd ~/Desktop', 'ls']
 
 ### clearCommand
 
-`hyper-init` clears the terminal buffer using `printf "\\033[H"` as the default value, but you can set it manually adding the `clearCommand: ''` property within the `config` object. For example:
+`hyper-init` can infer the command to clear the screen for a small number of terminals.
+If it can't infer the command, `hyper-init` clears the terminal buffer using `printf "\\033[H"`.
+You can set it manually adding the `clearCommand: ''` property within the `config` object.
+For example:
 
 ```js
 module.exports = {
-  config: {
-    clearCommand: 'reset'
-  }
+	config: {
+		clearCommand: 'reset'
+	}
 }
 ```
 
@@ -124,17 +128,42 @@ For example:
 
 ```js
 module.exports = {
-  config: {
-    commandSeparator: ' ++ ' // For an arbitrary terminal that uses `++`
-  }
+	config: {
+		commandSeparator: ' ++ ' // For an arbitrary terminal that uses `++`
+	}
 }
 ```
 
-![Testing in PowerShell](/img/hyper_test_powershell.png)
-![Testing in CMD](img/hyper_test_cmd.png)
-![Testing in Node](img/hyper_test_node.png)
+## Contributing
 
-No, I haven't fixed the `printf \033[H` error yet. I will. Soon
+`hyper-init`'s ability to infer the `clearCommand` and `commandSeparator` is based on its relatively small dictionary.
+Feel free to add more definitions for terminals not listed in `get-specifics.js`.
+
+```js
+KNOWN_SHELLS = {
+	[...]
+	shellName: {
+		separator: '',
+		clearCommand: ''
+	}
+	[...]
+}
+```
+
+- `shellName` should be replaced with the name of the shell you want to target (lowercase)
+- The value of `separator` should be the separator for multiple statements on one line (IE `' && '`) as a string
+- The value of `clearCommand` should be the command to clear the target shell (IE `'cls'`) as a string
+
+```js
+KNOWN_SHELLS = {
+	[...]
+	powershell: {
+		separator: '; ',
+		clearCommand: 'Clear-Host'
+	}
+	[...]
+}
+```
 
 ## License
 [MIT License](https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE)

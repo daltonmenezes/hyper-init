@@ -1,15 +1,18 @@
 const Path = require('path')
 
-const KNOWN_SEPARATORS = {
-	powershell: '; ',
-	node: '; ',
-	cmd: ' & ',
-	fallback: ' && ',
+const KNOWN_SHELLS = {
+	powershell: { separator: '; ', clearCommand: 'Clear-Host' },
+	node: { separator: '; ', clearCommand: 'console.clear();' },
+	cmd: { separator: ' & ', clearCommand: 'cls' },
+	fallback: { separator: ' && ', clearCommand: 'printf "\\033[H"' },
 }
 
 exports.getSeparator = (browserWindow, uid) => {
 	let shellName = Path.parse(browserWindow.sessions.get(uid).shell).name.toLowerCase()
-	return KNOWN_SEPARATORS[shellName] || KNOWN_SEPARATORS['fallback'] // Separator not found
+	return KNOWN_SHELLS[shellName].separator || KNOWN_SHELLS['fallback'].separator // Separator not found
 }
 
-exports.getClearScreen = ( ) => { }
+exports.getClearCommand = (browserWindow, uid) => {
+	let shellName = Path.parse(browserWindow.sessions.get(uid).shell).name.toLowerCase()
+  return KNOWN_SHELLS[shellName].clearCommand || KNOWN_SHELLS['fallback'].clearCommand // Command not found
+}
