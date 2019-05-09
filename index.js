@@ -8,9 +8,11 @@ const waitFor = require('./src/wait-for')
 const init = {}
 const terminal = {}
 let clearCommand
+let commandSeparator
 
 exports.onApp = ({ config }) => {
 	clearCommand = config.getConfig().clearCommand || undefined
+	commandSeparator = config.getConfig().commandSeparator || undefined
 	Object.assign(init, config.getConfig().init)
 }
 
@@ -24,7 +26,7 @@ exports.reduceTermGroups = reducer =>
 exports.middleware = store => next => action => {
 	if (action.type === 'SESSION_ADD')
 			Object.assign(terminal, { splitDirection: action.splitDirection })
-	
+
 	next(action)
 }
 
@@ -32,7 +34,7 @@ exports.onWindow = app =>
 	app.rpc.on('hyper-init execute commands', ({ uid, terminal }) => {
 		clearBuffer({ app, uid }, clearCommand)
 		Object.keys(init).map(key => {
-			let cmd = joinCommands(init[key].commands)
+			let cmd = joinCommands(init[key].commands, commandSeparator)
 			rulesHandler({ init, key, cmd, app, uid, terminal })
 		})
 	})
