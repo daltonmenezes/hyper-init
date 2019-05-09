@@ -116,15 +116,25 @@ module.exports = {
 
 ### commandSeparator
 
-`hyper-init` uses ` && ` as the default separator for commands. Not all terminals support this syntax, but you can set it manually by adding the `commandSeparator: ''` property within the `config` object. For example:
+`hyper-init` uses ` && ` as the default separator for commands.
+For known terminals, `hyper-init` can infer the separator.
+You can also set it manually by adding the `commandSeparator: ''` property within the `config` object,
+but this overrides for all terminals, even ones that don't support that delimiter.
+For example:
 
 ```js
 module.exports = {
   config: {
-    commandSeparator: '; ' // For PowerShell users
+    commandSeparator: ' ++ ' // For an arbitrary terminal that uses `++`
   }
 }
 ```
+
+![Testing in PowerShell](/img/hyper_test_powershell.png)
+![Testing in CMD](img/hyper_test_cmd.png)
+![Testing in Node](img/hyper_test_node.png)
+
+No, I haven't fixed the `printf \033[H` error yet. I will. Soon
 
 ## License
 [MIT License](https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE)

@@ -3,6 +3,8 @@
 const { rulesHandler } = require('./src/rules/rules-handler')
 const { clearBuffer } = require('./src/clear-buffer')
 const { joinCommands } = require('./src/join-commands')
+const { getSeparator } = require('./src/get-specifics')
+const { getClearScreen } = require('./src/get-specifics')
 const waitFor = require('./src/wait-for')
 
 const init = {}
@@ -30,14 +32,16 @@ exports.middleware = store => next => action => {
 	next(action)
 }
 
-exports.onWindow = app =>
-	app.rpc.on('hyper-init execute commands', ({ uid, terminal }) => {
-		clearBuffer({ app, uid }, clearCommand)
+exports.onWindow = browserWindow => {
+	browserWindow.rpc.on('hyper-init execute commands', ({ uid, terminal }) => {
+		if (commandSeparator === undefined) { commandSeparator = getSeparator(browserWindow, uid) }
+		clearBuffer({ app: browserWindow, uid }, clearCommand)
 		Object.keys(init).map(key => {
 			let cmd = joinCommands(init[key].commands, commandSeparator)
-			rulesHandler({ init, key, cmd, app, uid, terminal })
+			rulesHandler({ init, key, cmd, app: browserWindow, uid, terminal })
 		})
-	})
+  })
+}
 
 exports.onRendererWindow = app =>
 	waitFor(app, 'rpc', rpc =>
