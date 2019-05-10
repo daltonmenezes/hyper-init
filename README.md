@@ -4,7 +4,7 @@
 
 <p align="center">The ultimate and most complete extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
 <br/><br/>
-<a href="https://www.patreon.com/daltonmenezes"><img src="https://img.shields.io/badge/become%20a-patron%20or%20sponsor-orange.svg" alt="become a patron or sponsor" /></a>  
+<a href="https://www.patreon.com/daltonmenezes"><img src="https://img.shields.io/badge/become%20a-patron%20or%20sponsor-orange.svg" alt="become a patron or sponsor" /></a>
 <a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/Donate-green.svg" alt="Donate" /></a>
     <a href="https://www.npmjs.com/package/hyper-init"><img src="https://img.shields.io/npm/v/hyper-init.svg" alt="npm version"/></a>
     <img src="https://img.shields.io/npm/dm/hyper-init.svg?label=Downloads" alt="downloads" />
@@ -14,24 +14,27 @@
 </a>
 </p>
 
-> With **hyper-init** you can perform as many commands as you would like to do, before and after Hyper terminal starts, using rules that defines when your commands should run.
+> With **hyper-init** you can perform as many commands as you would like to do, before and after Hyper terminal starts, using rules that define when your commands should run.
 
 <p align="center"><img src="https://github.com/daltonmenezes/hyper-init/blob/master/img/hyper-init.gif?raw=true" alt="hyper-init gif"/></p>
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Configuration](#configuration)
   - [init](#init)
+    - [Rules](#rules)
+    - [Commands](#commands)
   - [clearCommand](#clearcommand)
-- [init Options](#init-options)
-  - [Rules](#rules)
-  - [Commands](#commands)
+  - [commandSeparator](#commandseparator)
+- [Contributing](#contributing)
+- [License](#license)
 
 
 ## Installation
 
-If you don't have Hyper, install it from [here](https://hyper.is/#installation).
+If you don't have Hyper, install it [here](https://hyper.is/#installation).
 
 So, type the following on Hyper:
 
@@ -41,11 +44,11 @@ hyper i hyper-init
 
 ## Configuration
 
-## init
+### init
 
-```hyper-init``` can be configured in ```~/.hyper.js``` configuration file within the ```config``` object.
+`hyper-init` can be configured within the `config` object in the `~/.hyper.js` configuration file.
 
-All you have to do to get started is to create an array of objects called ```init```.
+All you have to do to get started is to create an array of objects called `init`, like this:
 
 ```js
 init: [
@@ -56,11 +59,11 @@ init: [
 ]
 ```
 
-Your ```~/.hyper.js``` configuration file should look like this:
+Your `~/.hyper.js` configuration file should look like this:
 ```js
 module.exports = {
   config: {
-  
+
     // add hyper-init configuration like this:
     init: [
       {
@@ -71,7 +74,7 @@ module.exports = {
         rule: 'windows',
         commands: ['echo This is only executed on New Windows!']
       }
-    ]    
+    ]
   },
 
   plugins: ['hyper-init']
@@ -79,38 +82,87 @@ module.exports = {
 }
 ```
 
-## clearCommand
-
-Also `hyper-init` clears the terminal buffer using `printf "\\033[H"` as the default value, but you can set it manually adding the `clearCommand: ''` property within the `config` object. For example:
-
-```js
-module.exports = {
-  config: {
-    clearCommand: 'reset'
-  }
-}
-```
-
-## init: Options
-
-### Rules
+#### Rules
 A string that defines when you want your commands to run.
 
- Rule | Description 
- --- | --- 
+ Rule | Description
+ --- | ---
  `once` | executes your commands only at Hyper starts
- `windows` | executes your commands only at new windows
- `tabs` | executes your commands only at new tabs
- `splitted` | executes your commands only at splitted windows
- `all` | executes your commands with all described states previously
+ `windows` | executes your commands only when a new Hyper window opens
+ `tabs` | executes your commands only when a new tab is opened
+ `splitted` | executes your commands only when a new pane is opened
+ `all` | executes your commands every time a terminal opens
 
-### Commands
+#### Commands
 An array with your shell commands to run.<br/>
-You can perform as many commands as you would like to do.
+You can perform as many commands as you would like.
 
 Example:
 ```js
 commands: ['cd ~/Desktop', 'ls']
+```
+
+
+### clearCommand
+
+`hyper-init` can infer the command to clear the screen for a small number of terminals.
+If it can't infer the command, `hyper-init` clears the terminal buffer using `printf "\\033[H"`.
+You can set it manually adding the `clearCommand: ''` property within the `config` object.
+For example:
+
+```js
+module.exports = {
+	config: {
+		clearCommand: 'reset'
+	}
+}
+```
+
+### commandSeparator
+
+`hyper-init` uses ` && ` as the default separator for commands.
+For known terminals, `hyper-init` can infer the separator.
+You can also set it manually by adding the `commandSeparator: ''` property within the `config` object,
+but this overrides for all terminals, even ones that don't support that delimiter.
+For example:
+
+```js
+module.exports = {
+	config: {
+		commandSeparator: ' ++ ' // For an arbitrary terminal that uses `++`
+	}
+}
+```
+
+## Contributing
+
+`hyper-init`'s ability to infer the `clearCommand` and `commandSeparator` is based on its relatively small dictionary.
+Feel free to add more definitions for terminals not listed in `get-specifics.js`.
+
+```js
+KNOWN_SHELLS = {
+	[...]
+	shellName: {
+		separator: '',
+		clearCommand: ''
+	}
+	[...]
+}
+```
+
+- `shellName` should be replaced with the name of the shell you want to target (lowercase)
+- The value of `separator` should be the separator for multiple statements on one line (IE `' && '`) as a string
+- The value of `clearCommand` should be the command to clear the target shell (IE `'cls'`) as a string
+
+```js
+KNOWN_SHELLS = {
+	[...]
+	powershell: {
+		separator: '; ',
+		clearCommand: 'Clear-Host'
+	}
+	[...]
+}
 ```
 
 ## License

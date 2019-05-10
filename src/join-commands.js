@@ -1,1 +1,1 @@
-exports.joinCommands = commands => commands.join(' && ')
+exports.joinCommands = (commands, commandSeparator = ' && ') => commands.join(commandSeparator)
