@@ -151,8 +151,8 @@ KNOWN_SHELLS = {
 ```
 
 - `shellName` should be replaced with the name of the shell you want to target (lowercase)
-- The value of `separator` should be the separator for multiple statements on one line (IE `' && '`) as a string
-- The value of `clearCommand` should be the command to clear the target shell (IE `'cls'`) as a string
+- The value of `separator` should be the separator for multiple statements on one line (e.g. `' && '`) as a string
+- The value of `clearCommand` should be the command to clear the target shell (e.g. `'cls'`) as a string
 
 ```js
 KNOWN_SHELLS = {
