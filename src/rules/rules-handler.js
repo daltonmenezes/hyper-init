@@ -1,8 +1,14 @@
 const rules = require('./index')
+const { isRule } = require('../is/is-rule')
 
 exports.rulesHandler = (...[props]) => {
 	const rule = props.init[props.key].rule
-
-	if (rule in rules)
-			rules[rule](props)
+	
+	Array.isArray(rule)
+		? rule.map(rule => isRule(rule) ? rules[rule](props) : '')
+		: ''
+	
+	isRule(rule)
+		? rules[rule](props)
+		: ''
 }

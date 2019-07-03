@@ -73,6 +73,10 @@ module.exports = {
       {
         rule: 'windows',
         commands: ['echo This is only executed on New Windows!']
+      },
+      {
+        rule: ['splitted', 'tabs', 'windows'],
+        commands: ['echo Hey, I can set an array of rules!']
       }
     ]
   },
@@ -83,7 +87,7 @@ module.exports = {
 ```
 
 #### Rules
-A string that defines when you want your commands to run.
+A string or array that defines when you want your commands to run.
 
  Rule | Description
  --- | ---
