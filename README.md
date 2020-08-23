@@ -3,15 +3,31 @@
 <h1 align="center">hyper-init</h1>
 
 <p align="center">The ultimate and most complete extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
-<br/><br/>
-<a href="https://www.patreon.com/daltonmenezes"><img src="https://img.shields.io/badge/become%20a-patron%20or%20sponsor-orange.svg" alt="become a patron or sponsor" /></a>
-<a href="https://paypal.me/daltonmenezes"><img src="https://img.shields.io/badge/Donate-green.svg" alt="Donate" /></a>
-    <a href="https://www.npmjs.com/package/hyper-init"><img src="https://img.shields.io/npm/v/hyper-init.svg" alt="npm version"/></a>
-    <img src="https://img.shields.io/npm/dm/hyper-init.svg?label=Downloads" alt="downloads" />
-    <a href="https://github.com/bnb/awesome-hyper"><img src="https://camo.githubusercontent.com/63134cb1c7ec0b86c8d97bc42877a271cf7307fa/68747470733a2f2f6473632e636c6f75642f73696e647265736f726875732f6d656e74696f6e65642d62616467652e737667" alt="mentioned in awesome list"/></a>
-<a href="https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
-</a>
+  <br/><br/>
+  <!-- Patreon -->
+  <a href="https://www.patreon.com/daltonmenezes">
+    <img src="https://img.shields.io/badge/support%20on-patreon-orange.svg?style=for-the-badge&labelColor=1C1E26&color=00be44" alt="become a patron or sponsor" />
+  </a>
+  
+   <!-- IssueHunt -->
+  <a href="https://issuehunt.io/r/daltonmenezes/hyper-init">
+    <img alt="issuehunt url" src="https://img.shields.io/badge/fund%20issues-issuehunt-1C1E26?style=for-the-badge&labelColor=1C1E26&color=00be44">
+  </a>
+  
+  <!-- NPM Version -->
+  <a href="https://www.npmjs.com/package/hyper-init">
+    <img src="https://img.shields.io/npm/v/hyper-init.svg?style=for-the-badge&labelColor=1C1E26&color=00be44" alt="npm version"/>
+  </a>
+  
+  <!-- NPM Downloads -->
+  <a href="https://www.npmjs.com/package/hyper-init">
+    <img src="https://img.shields.io/npm/dm/hyper-init.svg?label=Downloads&style=for-the-badge&labelColor=1C1E26&color=00be44" alt="downloads" />
+  </a>
+  
+  <!-- Awesome -->
+  <a href="https://github.com/bnb/awesome-hyper">
+    <img src="https://img.shields.io/badge/mentioned%20in-awesome-orange.svg?style=for-the-badge&labelColor=1C1E26&color=00be44" alt="mentioned in awesome list"/>
+  </a>
 </p>
 
 > With **hyper-init** you can perform as many commands as you would like to do, before and after Hyper terminal starts, using rules that define when your commands should run.
@@ -34,7 +50,7 @@
 
 ## Installation
 
-If you don't have Hyper, install it [here](https://hyper.is/#installation).
+If you don't have Hyper, install it from [here](https://hyper.is/#installation).
 
 So, type the following on Hyper:
 
@@ -91,11 +107,11 @@ A string or array that defines when you want your commands to run.
 
  Rule | Description
  --- | ---
- `once` | executes your commands only at Hyper starts
- `windows` | executes your commands only when a new Hyper window opens
- `tabs` | executes your commands only when a new tab is opened
- `splitted` | executes your commands only when a new pane is opened
- `all` | executes your commands every time a terminal opens
+ once | executes your commands only at Hyper starts
+ windows | executes your commands only when a new Hyper window opens
+ tabs | executes your commands only when a new tab is opened
+ splitted | executes your commands only when a new pane is opened
+ all | executes your commands every time a terminal opens
 
 #### Commands
 An array with your shell commands to run.<br/>
@@ -116,9 +132,9 @@ For example:
 
 ```js
 module.exports = {
-	config: {
-		clearCommand: 'reset'
-	}
+  config: {
+    clearCommand: 'reset'
+  }
 }
 ```
 
@@ -132,25 +148,37 @@ For example:
 
 ```js
 module.exports = {
-	config: {
-		commandSeparator: ' ++ ' // For an arbitrary terminal that uses `++`
-	}
+  config: {
+    commandSeparator: ' ++ ' // For an arbitrary terminal that uses `++`
+  }
 }
 ```
 
 ## Contributing
 
-`hyper-init`'s ability to infer the `clearCommand` and `commandSeparator` is based on its relatively small dictionary.
+Contributions are always welcome.
+
+There's a bunch of ways you can contribute to this project, like by:
+- :electric_plug: Creating new features
+- :wave: Requesting a feature
+- :beetle: Reporting a bug
+- :page_facing_up: Improving this documentation
+- :rotating_light: Sharing this project and recommending it to your friends
+- :dollar: Supporting this project on Patreon
+- :bug: Funding an issue on IssueHunt
+- :star2: Dropping a star on this repository
+
+And `hyper-init`'s ability to infer the `clearCommand` and `commandSeparator` is based on its relatively small dictionary.
 Feel free to add more definitions for terminals not listed in `get-specifics.js`.
 
 ```js
 KNOWN_SHELLS = {
-	[...]
-	shellName: {
-		separator: '',
-		clearCommand: ''
-	}
-	[...]
+  [...]
+  shellName: {
+    separator: '',
+    clearCommand: ''
+  }
+  [...]
 }
 ```
 
@@ -160,14 +188,14 @@ KNOWN_SHELLS = {
 
 ```js
 KNOWN_SHELLS = {
-	[...]
-	powershell: {
-		separator: '; ',
-		clearCommand: 'Clear-Host'
-	}
-	[...]
+  [...]
+  powershell: {
+    separator: '; ',
+    clearCommand: 'Clear-Host'
+  }
+  [...]
 }
 ```
 
 ## License
-[MIT License](https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE)
+[MIT © Dalton Menezes](https://github.com/daltonmenezes/hyper-init/blob/master/LICENSE)
