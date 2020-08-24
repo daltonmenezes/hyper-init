@@ -42,7 +42,7 @@
   - [init](#init)
     - [Rules](#rules)
     - [Commands](#commands)
-    - [Allowed Shells](#allowedShells)
+    - [Allowed Shells](#allowed-shells)
   - [clearCommand](#clearcommand)
   - [commandSeparator](#commandseparator)
 - [Contributing](#contributing)
