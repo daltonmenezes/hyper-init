@@ -42,6 +42,7 @@
   - [init](#init)
     - [Rules](#rules)
     - [Commands](#commands)
+    - [Allowed Shells](#allowed-shells)
   - [clearCommand](#clearcommand)
   - [commandSeparator](#commandseparator)
 - [Contributing](#contributing)
@@ -70,7 +71,8 @@ All you have to do to get started is to create an array of objects called `init`
 init: [
   {
     rule: 'once',
-    commands: ['cd ~/Desktop', 'ls']
+    commands: ['cd ~/Desktop', 'ls'],
+    allowedShells: ['zsh', 'bash']
   }
 ]
 ```
@@ -84,7 +86,8 @@ module.exports = {
     init: [
       {
         rule: 'once',
-        commands: ['cd ~/Desktop', 'ls']
+        commands: ['cd ~/Desktop', 'ls'],
+        allowedShells: ['zsh', 'bash']
       },
       {
         rule: 'windows',
@@ -122,6 +125,14 @@ Example:
 commands: ['cd ~/Desktop', 'ls']
 ```
 
+#### Allowed Shells
+An array of allowed shells to restrict the commands to be executed.
+
+Example:
+```js
+allowedShells: ['zsh', 'bash']
+```
+> You can omit this property or let the array empty if you would like to allow the commands run for all shells.
 
 ### clearCommand
 
