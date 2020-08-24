@@ -5,9 +5,9 @@ const { onTabsRule } = require('./on-tabs-rule')
 const { onAllRule } = require('./on-all-rule')
 
 module.exports = {
-	'once': onceRule,
-	'windows': onNewWindowRule,
-	'splitted': onSplittedWindowsRule,
-	'tabs': onTabsRule,
-	'all': onAllRule
+  once: onceRule,
+  windows: onNewWindowRule,
+  splitted: onSplittedWindowsRule,
+  tabs: onTabsRule,
+  all: onAllRule,
 }

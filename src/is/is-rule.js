@@ -1,3 +1,3 @@
 const rules = require('../rules/index')
 
-exports.isRule = rule => rule in rules
+exports.isRule = (rule) => rule in rules

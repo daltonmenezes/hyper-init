@@ -169,7 +169,7 @@ There's a bunch of ways you can contribute to this project, like by:
 - :star2: Dropping a star on this repository
 
 And `hyper-init`'s ability to infer the `clearCommand` and `commandSeparator` is based on its relatively small dictionary.
-Feel free to add more definitions for terminals not listed in `get-specifics.js`.
+Feel free to add more definitions for terminals not listed in `shells.js`.
 
 ```js
 KNOWN_SHELLS = {
