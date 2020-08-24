@@ -1,9 +1,8 @@
 const { KNOWN_SHELLS } = require('./shells')
-const Path = require('path')
+const { getShellName } = require('./get-shell-name')
 
 exports.getSeparator = (browserWindow, uid) => {
-  let shellName =
-    Path.parse(browserWindow.sessions.get(uid).shell).name.toLowerCase() || null
+  const shellName = getShellName({ browserWindow, uid })
 
   return KNOWN_SHELLS[shellName]
     ? KNOWN_SHELLS[shellName].separator
@@ -11,8 +10,7 @@ exports.getSeparator = (browserWindow, uid) => {
 }
 
 exports.getClearCommand = (browserWindow, uid) => {
-  let shellName =
-    Path.parse(browserWindow.sessions.get(uid).shell).name.toLowerCase() || null
+  const shellName = getShellName({ browserWindow, uid })
 
   return KNOWN_SHELLS[shellName]
     ? KNOWN_SHELLS[shellName].clearCommand
