@@ -1,36 +1,36 @@
-<p align="center"><img src="https://i.imgur.com/putnspY.png" alt="logo"/></p>
-
-<h1 align="center">hyper-init</h1>
+<p align="center">
+  <img src="https://github.com/daltonmenezes/assets/blob/master/images/hyper-init/heading.png?raw=true" alt="hyper-init heading" width="80%" />
+</p>
 
 <p align="center">The ultimate and most complete extension to initialize commands before and after <a href="https://hyper.is/">Hyper terminal</a> starts
   <br/><br/>
   <!-- Patreon -->
   <a href="https://www.patreon.com/daltonmenezes">
-    <img src="https://img.shields.io/badge/support%20on-patreon-orange.svg?style=for-the-badge&labelColor=1C1E26&color=00be44" alt="become a patron or sponsor" />
+    <img src="https://img.shields.io/badge/support%20on-patreon-orange.svg?style=for-the-badge&labelColor=1C1E26&color=585373" alt="become a patron or sponsor" />
   </a>
   
    <!-- IssueHunt -->
   <a href="https://issuehunt.io/r/daltonmenezes/hyper-init">
-    <img alt="issuehunt url" src="https://img.shields.io/badge/fund%20issues-issuehunt-1C1E26?style=for-the-badge&labelColor=1C1E26&color=00be44">
+    <img alt="issuehunt url" src="https://img.shields.io/badge/fund%20issues-issuehunt-1C1E26?style=for-the-badge&labelColor=1C1E26&color=585373">
   </a>
   
   <!-- NPM Version -->
   <a href="https://www.npmjs.com/package/hyper-init">
-    <img src="https://img.shields.io/npm/v/hyper-init.svg?style=for-the-badge&labelColor=1C1E26&color=00be44" alt="npm version"/>
+    <img src="https://img.shields.io/npm/v/hyper-init.svg?style=for-the-badge&labelColor=1C1E26&color=585373" alt="npm version"/>
   </a>
   
   <!-- NPM Downloads -->
   <a href="https://www.npmjs.com/package/hyper-init">
-    <img src="https://img.shields.io/npm/dm/hyper-init.svg?label=Downloads&style=for-the-badge&labelColor=1C1E26&color=00be44" alt="downloads" />
+    <img src="https://img.shields.io/npm/dm/hyper-init.svg?label=Downloads&style=for-the-badge&labelColor=1C1E26&color=585373" alt="downloads" />
   </a>
   
   <!-- Awesome -->
   <a href="https://github.com/bnb/awesome-hyper">
-    <img src="https://img.shields.io/badge/mentioned%20in-awesome-orange.svg?style=for-the-badge&labelColor=1C1E26&color=00be44" alt="mentioned in awesome list"/>
+    <img src="https://img.shields.io/badge/mentioned%20in-awesome-orange.svg?style=for-the-badge&labelColor=1C1E26&color=585373" alt="mentioned in awesome list"/>
   </a>
 </p>
 
-> With **hyper-init** you can perform as many commands as you would like to do, before and after Hyper terminal starts, using rules that define when your commands should run.
+> With **hyper-init** you can perform as many commands as you want, before and after Hyper terminal starts, using rules that define when your commands should run.
 
 <p align="center"><img src="https://github.com/daltonmenezes/hyper-init/blob/master/img/hyper-init.gif?raw=true" alt="hyper-init gif"/></p>
 
